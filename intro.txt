@@ -1,0 +1,1 @@
+SIFOMOC stands server instance for online managment of college data

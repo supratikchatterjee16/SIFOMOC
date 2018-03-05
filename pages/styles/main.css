@@ -1,0 +1,94 @@
+@font-face{
+    font-family:comfortaa;
+    src:url("fonts/Comfortaa.ttf");
+}
+@font-face{
+    font-family:comfortaal;
+    src:url("fonts/Comfortaa_Light.ttf");
+}
+body{
+position:fixed;
+background:rgba(50,50,50,1);
+margin:0;
+padding:0;
+left:0;
+top:0;
+}
+header{
+position:fixed;
+height:70pt;
+top:0;
+left:0;
+right:0;
+background:rgba(250,250,250,1);
+box-shadow:0pt 2pt 10pt #999;
+}
+iconholder{
+position:fixed;
+top:5pt;
+left:5pt;
+width:140pt;
+height:60pt;
+background:url("res/srm-logo-mod.png");
+background-size:cover;
+background-repeat:no-repeat;
+}
+titleholder{
+position:absolute;
+bottom:15pt;
+right:5pt;
+font-size:20pt;
+font-family:comfortaal;
+}
+main{
+position:fixed;
+left:0;
+top:70pt;
+bottom:0;
+background:rgba(250,250,250,1);
+width:100vw;
+}
+leftpane{
+position:absolute;
+left:-190pt;
+top:0;
+bottom:0;
+background:rgba(200,200,200,1);
+width:200pt;
+box-shadow:0 0 0 ;
+transition:all 0.5s;
+}
+leftpane:hover{
+/*top:-70pt;*/
+left:0pt;
+box-shadow:0px 10px 30px;
+overflow-y:scroll;
+}
+leftpane button{
+width:100%;
+height:30pt;
+background:rgba(0,0,0,0.1);
+border:0;
+}
+leftpane button:hover{
+background:rgba(50,50,170,0.5);
+box-shadow:0px 0px 25px #fff;
+}
+#subsearch{
+width:100%;
+height:30pt;
+text-align:center;
+}
+midpane{
+position:absolute;
+top:0;
+left:0;
+right:0;
+bottom:0;
+padding-top:20pt;
+padding-left:40pt;
+padding-right:40pt;
+margin:0pt;
+overflow-y:scroll;
+}
+
