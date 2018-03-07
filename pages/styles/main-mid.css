@@ -1,0 +1,22 @@
+midpane{
+position:absolute;
+top:0;
+left:0;
+right:0;
+bottom:0;
+padding-top:20pt;
+padding-left:40pt;
+padding-right:40pt;
+margin:0pt;
+overflow-y:scroll;
+}
+article{
+position:absolute;
+top:0;
+left:10%;
+width:80%;
+background:white;
+min-height:85vh;
+height:auto;
+box-shadow:0 0 50pt 2pt #777;
+}

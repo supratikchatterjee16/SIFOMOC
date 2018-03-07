@@ -33,3 +33,12 @@ function listElements(){
     }
     elements.sort();
 }
+function closeAll(){
+    for(var i=0;i<ctrl.length;i++){
+        if(ctrl[i]%i!=0){
+            slideInLeft(elements[i]);
+            slideInRight(elements[i]);
+        }
+        ctrl[i]=0;
+    }
+}
