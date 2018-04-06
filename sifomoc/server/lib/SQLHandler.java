@@ -50,16 +50,28 @@ class SQLHandler{
             rsmd = rs.getMetaData();
             int nofcol=rsmd.getColumnCount();
             String res[]=new String[nofcol];
-            for(int i=0;i<nofcol;i++){
-                System.out.println(rs.getString(i));
+            //System.out.println(conn.getCatalog());
+            while(rs.next()){
+                for(int i=1;i<=nofcol;i++){
+                    switch(rsmd.getColumnType(i)){
+                        case 4:System.out.print(rs.getInt(i));break;
+                        case 12:System.out.print(rs.getString(i));break;
+                        default:;
+                    }
+                    System.out.print("|");
+                }
+                System.out.println("");
             }
-        }catch(SQLException e){e.printStackTrace();}
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
         return resp;
     }
     public String executeStatement(String str){
         String resp="";
         return resp;
     }
+    public String close(){try{conn.close();}catch(SQLException e){return "Already closed";}return "Connection is now closed";}
     public static void main(String[] args){
         SQLHandler sh = new SQLHandler();
         sh.executeQuery("select * from test;");
