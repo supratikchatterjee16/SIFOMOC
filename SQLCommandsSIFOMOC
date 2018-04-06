@@ -1,0 +1,47 @@
+create database sifomoc;
+
+create table subject(
+    name varchar(50) not null,
+    code varchar(10) not null,
+    description varchar(500),
+    book1_name varchar(50),
+    book1_author varchar(50),
+    book1_image varchar(100),
+    book2_name varchar(50),
+    book2_author varchar(50),
+    book2_image varchar(100),
+    hours int,
+    credits int not null,
+    number_of_students int,
+    department varchar(10) not null,
+    precursor varchar(10) foreign key 
+);
+
+create table student(
+    name varchar(50) not null,
+    id varchar(10) not null,
+    image varchar(100),
+    department varchar(10) not null,
+    dob date,
+    doj date,
+    email varchar(20),
+    year int,
+    arrears varchar(100)
+);
+
+create table faculty(
+    name varchar(50) not null,
+    id varchar(10) not null,
+    image varchar(100),
+    department varchar(10) not null,
+    dob date,
+    doj date,
+    email varchar(20),
+    position varchar(20) not null,
+    specialisation varchar(20) not null,
+    inchargeof varchar(10)
+);
+
+create table password_store(
+
+);

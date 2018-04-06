@@ -1,0 +1,40 @@
+@font-face{
+    font-family:comfortaa;
+    src:url("fonts/Comfortaa.ttf");
+}
+@font-face{
+    font-family:comfortaal;
+    src:url("fonts/Comfortaa_Light.ttf");
+}
+@font-face{
+    font-family:JosefinS;
+    src:url("fonts/JosefinSans.ttf");
+}
+@font-face{
+    font-family:Kinari;
+    src:url("fonts/Kinari.ttf");
+}
+@font-face{
+    font-family:Sawasdee;
+    src:url("fonts/Sawasdee.ttf");
+}
+@font-face{
+    font-family:Serif;
+    src:url("fonts/FreeSerif.ttf");
+}
+body{
+    position:fixed;
+    background:rgba(50,50,50,1);
+    margin:0;
+    padding:0;
+    left:0;
+    top:0;
+    font-family: Sawasdee;
+}
+input{
+    background:white;
+    margin:0;
+    border:1pt black;
+    border-radius:2%;
+    color:black;
+}

@@ -1,0 +1,24 @@
+@font-face{
+    font-family:comfortaa;
+    src:url("fonts/Comfortaa.ttf");
+}
+@font-face{
+    font-family:comfortaal;
+    src:url("fonts/Comfortaa_Light.ttf");
+}
+body{
+    position:fixed;
+    background:rgba(50,50,50,1);
+    margin:0;
+    padding:0;
+    left:0;
+    top:0;
+    font-family: comfortaal;
+}
+input{
+    background:white;
+    margin:0;
+    border:1pt black;
+    border-radius:2%;
+    color:black;
+}
