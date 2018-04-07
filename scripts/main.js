@@ -1,6 +1,7 @@
 function init(){
-    listElements();
+    //listElements();
     assignFuncLeftButtons();
     populateSubjectSet();
     initKeys();
 }
+

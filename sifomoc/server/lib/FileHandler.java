@@ -18,7 +18,12 @@ public class FileHandler{
             if(f.exists()) res="File already exists";
             else {
                 String dir="";
-                try{dir = str.substring(0,str.lastIndexOf("/"));}catch(Exception e){e.printStackTrace();}
+                try{
+                    dir = str.substring(0,str.lastIndexOf("/"));
+                }catch(Exception e){
+                    //e.printStackTrace();
+                    
+                }
                 File fdir=new File(dir);
                 if(!fdir.exists())fdir.mkdirs();
                 f.createNewFile();
@@ -42,5 +47,4 @@ public class FileHandler{
         return "Success";
     }
     public static String log(String str){ return write("./logs"+d.toString(),str); }
-    
 }

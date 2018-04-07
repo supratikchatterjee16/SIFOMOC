@@ -1,0 +1,8 @@
+*.aux
+*.log
+*.tex
+pswd/
+accounts/
+logs/
+compile
+tabledetails.txt

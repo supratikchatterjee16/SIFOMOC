@@ -1,35 +1,51 @@
 leftpane{
 position:absolute;
-left:-200pt;
+left:0pt;
 top:0;
 bottom:0;
 background:rgba(50,50,50,0.9);
-width:200pt;
+color:white;
+width:20%;
 box-shadow:0 10pt 10pt ;
 transition:all 0.5s;
+font-family: Serif;
+}
+leftpane button{
+width:33.33%;
+height:30pt;
+transition: all 0.5s;
+border:0;
+color:white;
+font-family: comfortaa;
+font-size:12pt;
+background:rgba(50,50,150,0.9);
+}
+leftpane button:hover{
+background:rgba(50,50,50,0.9);
+box-shadow:0px 0px 25px #ccc;
 }
 leftpane:hover{
 /*top:-70pt;*/
 box-shadow:0px 10px 30px;
 overflow-y:auto;
 }
-leftpane button{
+subjopt button{
 width:100%;
 height:30pt;
 background:rgba(0,0,0,0.1);
 color:white;
-font-family:comfortaa;
-font-weight:900;
 border:0;
 transition:all 0.5s;
 }
-leftpane button:hover{
-background:rgba(50,50,170,0.5);
-height:50pt;
-box-shadow:0px 0px 25px #fff;
+subjopt button:hover{
+background:rgba(50,50,170,0.9);
+height:40pt;
+box-shadow:0px 0px 25px #ccc;
 }
 #subsearch{
-width:100%;
+width:99%;
 height:30pt;
 text-align:center;
+border:1pt;
+border-radius:2pt;
 }

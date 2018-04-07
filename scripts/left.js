@@ -1,12 +1,16 @@
 var ctr=0;
 var originalSubjectSet=[];
 function assignFuncLeftButtons(){
-    var dom = document.getElementsByTagName("subjopt")[0];
+    var dom = document.getElementsByTagName("subjopt")[0],dom2=document.getElementsByTagName("leftpane")[0];
     dom = dom.getElementsByTagName("button");
+    dom2 = dom2.getElementsByTagName("button");
     for(var i=0;i<dom.length;i++)
     dom[i].onclick=function(){
         //Space for the function to be assigned to each button.Ex:subjopt(this);
     };
+    for(var i =0;i<dom2.length;i++)dom2[i].onclick=function(){
+        send("fetch list "+this.innerHTML);
+    }
 }
 function subjopt(dom){
     var re = new RegExp(dom.value,"ig");
@@ -23,6 +27,6 @@ function subjopt(dom){
 }
 function populateSubjectSet(){
     //Provision to get initial subject list from server. The following line is a temporary testing solution
-    var elems=document.getElementsByTagName("subjopt")[0].getElementsByTagName("button");
-    for(var i=0;i<elems.length;i++)originalSubjectSet.push(elems[i].innerHTML);
+    var elems=send("sub list");
+    
 }

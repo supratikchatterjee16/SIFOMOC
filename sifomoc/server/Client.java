@@ -50,14 +50,14 @@ class Client implements Runnable{
                 for(int i=0;i<20;i++)
                     if(get[i].indexOf("Content-Length")!=-1){
                         ctr = Integer.parseInt(get[i].substring(get[i].indexOf(" ")+1));
-                        System.out.println(ctr);
                         break;
                     }
+                in.read();//Removes the last \r character
                 while(ctr--!=0)post+=(char)in.read();
+                //System.out.println("Post data : "+post);
                 resp=Parser.doPost(get,post);
             }
             File f = new File(resp[0]);
-
              //Section : Headers Settings
             out.print("HTTP/1.1 200 OK\r\n");
             out.print("");//Date: Mon,27 July 2009 12:28:53 GMT

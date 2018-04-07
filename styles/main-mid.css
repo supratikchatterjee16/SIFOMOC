@@ -1,22 +1,46 @@
+/*
+Font sizes
+Chapter title = 20pt
+chapter subheading = 16pt
+section title = 16pt
+section subheading = 14pt;
+*/
 midpane{
 position:absolute;
-top:0;
-left:0;
+left:20%;
 right:0;
-bottom:0;
-padding-top:20pt;
-padding-left:40pt;
-padding-right:40pt;
-margin:0pt;
-overflow-y:scroll;
-}
-article{
-position:absolute;
 top:0;
-left:10%;
 width:80%;
+bottom:0;
 background:white;
-min-height:85vh;
-height:auto;
-box-shadow:0 0 50pt 2pt #777;
+overflow-y: auto;
+}
+
+#student,#faculty,#subject{
+  margin:40pt;
+}
+#student{
+  display: block;
+}
+profile-pic{
+  display: block;
+}
+name{
+  display:block;
+  font-size: 20pt;
+  padding-top: 20pt;
+  padding-bottom: 20pt;
+}
+id{
+  display:block;
+  font-size: 16pt;
+  padding-bottom:20pt;
+}
+table{
+  display: table;
+  font-size: 14pt;
+}
+table tr td{
+  width:200pt;
+  height:25pt;
 }
