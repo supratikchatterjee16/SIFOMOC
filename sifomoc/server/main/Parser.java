@@ -33,7 +33,7 @@ public class Parser{
       return resp;
     }
     public static String[] doPost(String[] args, String msg){
-        String output="message.sfmc",resp="";
+        String output="./temp/message.sfmc",resp="";
         String res[]={output,"text/plain"};
         //for(int i=0;i<args.length;i++)System.out.println(args[i]);
         resp=QueryResolver.resolve(msg);

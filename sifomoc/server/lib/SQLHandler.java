@@ -1,5 +1,7 @@
 package sifomoc.server.lib;
 
+import sifomoc.server.main.Log;
+
 import java.util.Scanner;
 
 import java.io.File;
@@ -37,7 +39,10 @@ public final class SQLHandler{
             }
             try{
             c=Class.forName("org.mariadb.jdbc.Driver");
-            conn  = DriverManager.getConnection("jdbc:mysql://localhost:3306/"+db,user,password);}catch(Exception e){e.printStackTrace();}
+            conn  = DriverManager.getConnection("jdbc:mysql://localhost:3306/"+db,user,password);}catch(Exception e){
+            	//e.printStackTrace();
+            	Log.reportError(e.toString());
+            }
     }
     
     public String executeQuery(String str){
@@ -57,12 +62,13 @@ public final class SQLHandler{
                         case 12:resp+=rs.getString(i);break;
                         default:;
                     }
-                    resp+="|";
+                    resp+=",";
                 }
                 resp+="\n";
             }
         }catch(SQLException e){
-            e.printStackTrace();
+            //e.printStackTrace();
+            Log.reportError(e.toString());
         }
         return resp;
     }
@@ -74,17 +80,20 @@ public final class SQLHandler{
             st =conn.createStatement();
             boolean success = st.execute(str);
             if(success)resp="Succesful";
-        }catch(SQLException e){e.printStackTrace();}
+        }catch(SQLException e){
+        	//e.printStackTrace();
+        	Log.reportError(e.toString());
+        	}
         return resp;
     }
     public String executeStatement(String str){
         String resp="";
         String command = str.substring(0,str.indexOf(" "));
         command=command.trim();
-        System.out.println(command);
+        //System.out.println(command);
         if(command.equalsIgnoreCase("select")||command.equalsIgnoreCase("delete")||command.equalsIgnoreCase("update")){resp=executeQuery(str);}
         else {resp=execute(str);}
-        System.out.println(resp);
+        //System.out.println(resp);
         return resp;
     }
     public String close(){try{conn.close();}catch(SQLException e){return "Already closed";}return "Connection is now closed";}

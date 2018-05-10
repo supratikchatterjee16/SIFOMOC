@@ -1,7 +1,6 @@
 function init(){
-    //listElements();
+    listElements();
     assignFuncLeftButtons();
-    populateSubjectSet();
     initKeys();
+    redundant();//This function is one that contains a lot of removal data
 }
-

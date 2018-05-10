@@ -22,7 +22,7 @@ function slideInRight(div){
     else doc.style.right=("-"+doc.clientWidth+"pt");
     ctrl[pos]++;
 }
-/*function listElements(){
+function listElements(){
     var ls = document.body.getElementsByTagName("*");
     for(var i=0;i<ls.length;i++){
         //console.log(ls[i].tagName);
@@ -32,7 +32,7 @@ function slideInRight(div){
         ){elements.push(ls[i].tagName);ctrl.push(0);}
     }
     elements.sort();
-}*/
+}
 function closeAll(){
     for(var i=0;i<ctrl.length;i++){
         if(ctrl[i]%i!=0){

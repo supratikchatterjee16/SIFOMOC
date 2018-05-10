@@ -57,6 +57,7 @@ class Client implements Runnable{
                 //System.out.println("Post data : "+post);
                 resp=Parser.doPost(get,post);
             }
+            //System.out.println(resp[0]+"|"+resp[1]);
             File f = new File(resp[0]);
              //Section : Headers Settings
             out.print("HTTP/1.1 200 OK\r\n");
@@ -75,7 +76,7 @@ class Client implements Runnable{
             //Section : Send Logic
             if(f.exists()){
                  InputStream fr=new FileInputStream(f);
-                byte b[]=new byte[4096];
+                byte b[]=new byte[8192];
                 while((n=fr.read(b))!=-1){out.write(b,0,n);}
             }
             //Section-End

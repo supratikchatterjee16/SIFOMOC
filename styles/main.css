@@ -1,3 +1,5 @@
+*:hover{cursor:default;}
+button:hover{cursor:pointer;}
 main{
     position:fixed;
     left:0pt;

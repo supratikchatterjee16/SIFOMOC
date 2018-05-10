@@ -31,7 +31,7 @@ overflow-y:auto;
 }
 subjopt button{
 width:100%;
-height:30pt;
+height:40pt;
 background:rgba(0,0,0,0.1);
 color:white;
 border:0;
@@ -39,7 +39,7 @@ transition:all 0.5s;
 }
 subjopt button:hover{
 background:rgba(50,50,170,0.9);
-height:40pt;
+height:50pt;
 box-shadow:0px 0px 25px #ccc;
 }
 #subsearch{

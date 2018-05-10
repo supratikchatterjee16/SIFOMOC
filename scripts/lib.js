@@ -1,3 +1,6 @@
+String.prototype.replaceAt=function(index, replacement) {
+    return this.substr(0, index) + replacement+ this.substr(index + replacement.length);
+}
 function initKeys(){
     document.onkeydown = function(evt) {
         evt = evt || window.event;
@@ -24,11 +27,9 @@ function send(str){
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
            // Action to be performed when the document is read;
-           var resp = this.responseText;
-           alert(resp);
+           triggerAction(xhttp.response);
         }
     };
     xhttp.open("POST", window.location, true);
-    console.log("Sent message is "+str);
     xhttp.send(str);
 }

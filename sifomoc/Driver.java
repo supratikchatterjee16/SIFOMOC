@@ -1,5 +1,7 @@
 package sifomoc;
 
+import sifomoc.server.main.Log;
+
 import java.util.HashMap;
 import java.util.Scanner;
 import java.util.InputMismatchException;
@@ -33,6 +35,7 @@ class Driver{
     public static void main(String[] args){
         HashMap<String, Integer> hm = new HashMap<String, Integer>();
         Scanner sc=new Scanner(System.in);
+        Log.init();
         String str="",command="",arg="",commandsList[]={"start","stop","help","exit"};
         int temp=0;
         for(int i=0;i<commandsList.length;i++)hm.put(commandsList[i],i);
