@@ -25,11 +25,7 @@ class Driver{
         }
     }
     private static void stop(String arg){
-        sifomoc.server.ServerManager.toggle();
-        t=null;
-        if(!sifomoc.server.ServerManager.isRunning())System.out.println("The server is now closed.");
-        else System.out.println("Server was not closed.");
-        }
+    }    
     private static void help(String arg){}
     private static void exit(String arg){System.exit(0);}
     public static void main(String[] args){
@@ -39,7 +35,7 @@ class Driver{
         String str="",command="",arg="",commandsList[]={"start","stop","help","exit"};
         int temp=0;
         for(int i=0;i<commandsList.length;i++)hm.put(commandsList[i],i);
-        System.out.println("This is the SIFMOC CLI.\nFor a brief intro on basic commands, type help.\nFor help on particular topics, type help <topic>\n>>");
+        //System.out.println("This is the SIFMOC CLI.\nFor a brief intro on basic commands, type help.\nFor help on particular topics, type help <topic>\n>>");
         try{
             while(true){
                 System.out.print(">>");
