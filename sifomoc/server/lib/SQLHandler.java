@@ -32,7 +32,7 @@ public final class SQLHandler{
                             case 1:user=sc.nextLine();break;
                             case 2:password=sc.nextLine();break;
                             default:;
-                        }                      
+                        }
                     }
                     //f.delete();
                 }catch(IOException e){e.printStackTrace();}
@@ -44,7 +44,7 @@ public final class SQLHandler{
             	Log.reportError(e.toString());
             }
     }
-    
+
     public String executeQuery(String str){
         Statement st=null;
         ResultSet rs =  null;

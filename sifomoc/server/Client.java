@@ -43,22 +43,23 @@ class Client implements Runnable{
             //GET read end
 
             ctr=0;
-            if(get[0].indexOf("GET")!=-1){
-                resp=Parser.doGet(get);
-            }
-            else{
+            if(get[0].indexOf("GET")!=-1)  resp=Parser.doGet(get);   //GET Parsing isbeing done here
+            else{																	//POST Parsing is done here
                 for(int i=0;i<20;i++)
                     if(get[i].indexOf("Content-Length")!=-1){
                         ctr = Integer.parseInt(get[i].substring(get[i].indexOf(" ")+1));
                         break;
                     }
+                
                 in.read();//Removes the last \r character
+                
                 while(ctr--!=0)post+=(char)in.read();
-                //System.out.println("Post data : "+post);
+
                 resp=Parser.doPost(get,post);
             }
-            //System.out.println(resp[0]+"|"+resp[1]);
+
             File f = new File(resp[0]);
+             
              //Section : Headers Settings
             out.print("HTTP/1.1 200 OK\r\n");
             out.print("");//Date: Mon,27 July 2009 12:28:53 GMT
