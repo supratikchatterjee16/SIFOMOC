@@ -6,7 +6,7 @@ function fetchListFor(e){
 		if(id==mainContentHolders[i])document.getElementById(mainContentHolders[i]).style.display="block";
 		else document.getElementById(mainContentHolders[i]).style.display="none";
 	}
-	send("fetch list "+e);
+	send("l"+e);
 }
 
 var originalSubjectSet=[];
@@ -20,14 +20,14 @@ function assignFuncLeftButtons(){
    			fetchListFor(this.innerHTML);//change this to fetchListFor(this.innerHTML) after testing
    		};
    	}
-   	
+
     for(var i=0;i<dom.length;i++)
     dom[i].onclick=function(){
         //Space for the function to be assigned to each button.Ex:subjopt(this);
-        var temp=this.innerHTML;
-        send("fetch details "+temp.substring(0,temp.indexOf("\n")));
+        var temp=this.title;
+        send("d "+temp);
     };
-   	
+
 }
 
 function subjopt(dom){

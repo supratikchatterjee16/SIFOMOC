@@ -50,6 +50,7 @@ public final class SQLHandler{
         ResultSet rs =  null;
         ResultSetMetaData rsmd = null;
         String resp="";
+        //System.out.println(str);
         try{
             st =conn.createStatement();
             rs = st.executeQuery(str);
@@ -90,7 +91,7 @@ public final class SQLHandler{
         String resp="";
         String command = str.substring(0,str.indexOf(" "));
         command=command.trim();
-        //System.out.println(command);
+        System.out.println(str +command);
         if(command.equalsIgnoreCase("select")||command.equalsIgnoreCase("delete")||command.equalsIgnoreCase("update")){resp=executeQuery(str);}
         else {resp=execute(str);}
         //System.out.println(resp);

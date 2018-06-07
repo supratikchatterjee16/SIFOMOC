@@ -20,11 +20,11 @@ public class ServerManager implements Runnable{
         	try{
             	Thread t=null;
             	ss = new ServerSocket(port);
-            	ss.setSoTimeout(1000);
+            	//ss.setSoTimeout(1000);
             	while(on){
             	    t= new Thread(new Client(ss.accept()));
             	    t.start();
-            	    if(sigkill){	
+            	    if(sigkill){
             	    	on = false;
             	    	ss=null;
             	    }
@@ -36,13 +36,13 @@ public class ServerManager implements Runnable{
         	return;
         }
     }
-    
+
     public static void stop(){sigkill = true;}
-    
+
     public static int getPort(){return port;}
-    
+
     public static boolean isRunning(){return on;}
-    
+
     public static void main(String[] args){Thread t=new Thread(new ServerManager(80));}
-    
+
 }

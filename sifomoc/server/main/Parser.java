@@ -6,8 +6,10 @@ import java.util.Hashtable;
 
 public class Parser{
     private static Hashtable<String, String> mimeList = null;
+    private static QueryResolver qs;
     public static void init(){
         mimeList=new Hashtable<String, String>();
+        qs = new QueryResolver();
         mimeList.put("ico","image/png");
         mimeList.put("png","image/png");
         mimeList.put("jpeg","image/jpeg");
@@ -35,8 +37,9 @@ public class Parser{
     public static String[] doPost(String[] args, String msg){
         String output="./temp/message.sfmc",resp="";
         String res[]={output,"text/plain"};
-        //for(int i=0;i<args.length;i++)System.out.println(args[i]);
-        resp=QueryResolver.resolve(msg);
+
+        resp=qs.resolve(msg);
+
         FileHandler.write(output,resp);
         return res;
     }
